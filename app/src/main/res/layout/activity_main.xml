@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.binding.newbindview.BindListContentView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyImage="@mipmap/no_content"
+        app:emptyMessage="暂无内容显示"
+        app:errorMessage="网络连接异常"
+        android:layout_weight="1"
+        app:managerType="grid"
+        app:spanCount="5"
+        app:staggeredType="horizontal"
+        app:staggeredCount="3"
+        android:id="@+id/mListView">
+
+
+    </com.binding.newbindview.BindListContentView>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+
+        <Button
+            android:id="@+id/mFillFull"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加数据10条数据" />
+
+        <Button
+            android:id="@+id/mFill8"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加数据8条" />
+
+
+        <Button
+            android:id="@+id/mClear"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="清空数据" />
+
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'BindingView'
+
+    publishedGroupId = 'huge'
+    libraryName = 'bindinglibrary'
+    artifact = 'BindingView'
+
+    libraryDescription = 'A widget to load WebView as an Overlay.'
+
+    siteUrl = 'https://github.com/tanghongbin/maven-gallery'
+    gitUrl = 'https://github.com/tanghongbin/maven-gallery'
+
+    libraryVersion = '1.1.0'
+
+    developerId = 'tanghongbin'
+    developerName = 'tanghongbin'
+    developerEmail = 'wsthb007@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:28.0.0'
+    compile 'com.android.support:recyclerview-v7:28.0.0'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    //noinspection GradleDependency
+    compile 'com.android.support:support-annotations:28.0.0'
+    //noinspection GradleDependency,GradleCompatible
+    compile 'com.android.support:support-v4:28.0.0'
+    //noinspection GradleDependency,GradleCompatible
+    compile 'com.android.support:recyclerview-v7:28.0.0'
+    //noinspection GradleDependency,GradleCompatible
+    compile 'com.android.support:design:28.0.0'
+}
+
+//Add these lines to publish library to bintray
+//Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+
